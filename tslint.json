@@ -1,0 +1,73 @@
+{
+    "defaultSeverity": "warning",
+    "extends": [
+        "tslint:recommended"
+    ],
+    "jsRules": {
+        "triple-equals": [
+            true
+        ],
+        "semicolon": [
+            "never"
+        ]
+    },
+    "rules": {
+        "no-magic-numbers": true,
+        "no-duplicate-variable": true,
+        "triple-equals": true,
+        "quotemark": [
+            "single"
+        ],
+        "no-use-before-declare": true,
+        "variable-name": [
+            "ban-keywords",
+            "allow-leading-underscore"
+        ],
+        "no-eval": true,
+        "no-unused-expression": true,
+        "no-unused-new": true,
+        "no-unused-variable": true,
+        "no-var-keyword": false,
+        "semicolon": [
+            "never"
+        ],
+        "ordered-imports": [
+            false
+        ],
+        "arrow-parens": false,
+        "no-consecutive-blank-lines": [
+            true
+        ],
+        "prefer-const": false,
+        "trailing-comma": [
+            true
+        ],
+        "max-line-length": [
+            false
+        ],
+        "restrict-plus-operands": true,
+        "no-inferrable-types": [
+            true,
+            "ignore-params"
+        ],
+        "no-console": [
+            "log",
+            "error"
+        ],
+        "no-trailing-whitespace": true,
+        "no-shadowed-variable": false,
+        "only-arrow-functions": [
+            false
+        ],
+        "no-var-requires": false,
+        "radix": false,
+        "no-internal-module": false,
+        "no-namespace": [
+            false
+        ],
+        "member-ordering": [
+            true
+        ]
+    },
+    "rulesDirectory": []
+}
