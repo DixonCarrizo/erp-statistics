@@ -59,3 +59,32 @@ typings/
 
 # next.js build output
 .next
+# Optional eslint cache
+.eslintcache
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# Visual studio code settings
+.vscode
+
+# Exclude log directories
+build/logs/*
+build/notification_logs/*
+!build/logs/.dummy
+!build/notification_logs/.dummy
+
+# Exclude map files
+*.js.map
+
+# Exclude built project
+build
+
+# Exclude apollo graphql schema file
+schema.json
