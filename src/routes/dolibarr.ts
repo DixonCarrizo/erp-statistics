@@ -3,11 +3,12 @@ import * as Axios from 'axios'
 const soap = require('soap') 
 
 const baseUrl = 'https://publidirecta.promocalltech.com'
+const dolibarrkey = 'lalalala123'
 
 const wsdl = `https://publidirecta.promocalltech.com/htdocs/webservices/server_user.php?wsdl`
 const arg = {
   authentication: {
-    dolibarrkey: 'webservice123',
+    dolibarrkey,
     sourceapplication: 'nodetest',
     login: 'webservice',
     password: 'webservice123',
@@ -15,7 +16,7 @@ const arg = {
   }
 }
 
-const getUser = (id: string) => Axios.default.get(`${baseUrl}/htdocs/api/index.php/user/${id}?api_key=webservice123`)
+const getUser = (id: string) => Axios.default.get(`${baseUrl}/htdocs/api/index.php/user/${id}?api_key=${dolibarrkey}`)
 
 const getJob = async (id: string) => {
   const { data: { job } } = await getUser(id)
