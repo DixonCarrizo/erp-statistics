@@ -1,5 +1,7 @@
 import Axios, { AxiosRequestConfig } from 'axios'
 import { Router, Request, Response } from 'express'
+import { IAuthorizedRequest } from '../types/AuthorizedRequest'
+import { login } from '../middleware/loginMiddleware'
 
 const router = Router()
 
@@ -32,8 +34,8 @@ router.post('/login', async (req: Request, res: Response) => {
   }
 })
 
-router.get('/statistics', async (req: Request, res: Response) => {
-  const authorization = req.headers.authorization
+router.get('/statistics', login, async (req: IAuthorizedRequest, res: Response) => {
+  const authorization = req.token
   const { extens, start_date, end_date } = req.query
 
   if(!extens || !start_date || !end_date) {
@@ -63,8 +65,8 @@ router.get('/statistics', async (req: Request, res: Response) => {
   }
 })
 
-router.get('/cdrs', async (req: Request, res: Response) => {
-  const authorization = req.headers.authorization
+router.get('/cdrs', login, async (req: IAuthorizedRequest, res: Response) => {
+  const authorization = req.token
   const { offset, limit, search, ordering } = req.query
 
   if(!offset || !limit || !search || !ordering) {
