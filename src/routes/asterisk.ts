@@ -25,7 +25,7 @@ const formattedStatistics = async (config) => {
     if (data.hasOwnProperty(extension)) {
       const element = data[extension];
       statistics.push({
-        date: config.start_date.split(' ')[0],
+        date: config.params.start_date.split(' ')[0],
         extension,
         totalCalls: element.totalCalls,
         totalTimeCalls: element.totalTimeCalls,
