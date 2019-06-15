@@ -42,9 +42,8 @@ module.exports = {
         type: Sequelize.BIGINT
       },
       created_at: {
-        type: DataTypes.DATE,
         allowNull: false,
-        defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
+        type: Sequelize.DATE
       }
     })
   },
