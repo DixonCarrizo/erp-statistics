@@ -40,6 +40,10 @@ module.exports = (sequelize, DataTypes) => {
     },
     lostCalls: {
       type: DataTypes.BIGINT
+    },
+    created_at: {
+      type: DataTypes.DATE,
+      allowNull: false
     }
   })
 
