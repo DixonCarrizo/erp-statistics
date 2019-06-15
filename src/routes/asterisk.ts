@@ -77,10 +77,7 @@ router.get('/load', login, async (req: IAuthorizedRequest, res: Response) => {
 
   let responses = await Promise.all(promises)
 
-  console.log('responses')
-  console.log(JSON.stringify(responses))
-
-  await asterisStatistisk.bulkCreate(responses)
+  await asterisStatistisk.bulkCreate(responses.flat())
 
   res.send('Listo')
 
