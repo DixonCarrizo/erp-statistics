@@ -45,12 +45,13 @@ const formattedStatistics = async (config) => {
 
 router.get('/load', login, async (req: IAuthorizedRequest, res: Response) => {
   const authorization = req.token
-  let yesterday = moment().subtract(1, 'days').format('YYYY-MM-DD');
+  const { start, end } = req.query
+  let yesterday = moment(`${end}`, 'YYYY-MM-DD').format('YYYY-MM-DD');
   let notToday = true
   let i = 0
   let listToFetch = []
   while (notToday) {
-    let toFetchDate = moment('2019-01-01', 'YYYY-MM-DD').add(i, 'days').format('YYYY-MM-DD');
+    let toFetchDate = moment(`${start}`, 'YYYY-MM-DD').add(i, 'days').format('YYYY-MM-DD');
     listToFetch.push({
       start_date: `${toFetchDate} 00:00:00`,
       end_date: `${toFetchDate} 23:59:59`
@@ -60,7 +61,7 @@ router.get('/load', login, async (req: IAuthorizedRequest, res: Response) => {
   }
 
   let promises = listToFetch.map(dates => {
-
+    
     const config: AxiosRequestConfig = {
       params: {
         extens: '21,1021,121,125,1025,25,128,1028,28,133,33',
