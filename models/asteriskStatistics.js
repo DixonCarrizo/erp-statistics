@@ -41,7 +41,7 @@ module.exports = (sequelize, DataTypes) => {
     lostCalls: {
       type: DataTypes.BIGINT
     },
-    created_at: {
+    createdAt: {
       type: DataTypes.DATE,
       allowNull: false,
       defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
