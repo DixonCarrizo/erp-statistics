@@ -40,12 +40,9 @@ module.exports = (sequelize, DataTypes) => {
     },
     lostCalls: {
       type: DataTypes.BIGINT
-    },
-    createdAt: {
-      type: DataTypes.DATE,
-      allowNull: false,
-      defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
     }
+  }, {
+    timestamps: false
   })
 
   return asterisk
